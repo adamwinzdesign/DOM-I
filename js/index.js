@@ -51,6 +51,15 @@ navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
 // cta
+let ctaTxt = document.querySelector('.cta-text h1');
+ctaTxt.style.whiteSpace = 'pre';
+ctaTxt.textContent = 'DOM\n Is\n Awesome';
+
+let ctaBtn = document.querySelector('.cta-text button');
+ctaBtn.textContent = 'Get Started';
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 // main-content
 
