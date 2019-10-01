@@ -42,13 +42,28 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // nav
-let navItems = document.getElementsByTagName('a');
-navItems[0].textContent = siteContent['nav']['nav-item-1'];
-navItems[1].textContent = siteContent['nav']['nav-item-2'];
-navItems[2].textContent = siteContent['nav']['nav-item-3'];
-navItems[3].textContent = siteContent['nav']['nav-item-4'];
-navItems[4].textContent = siteContent['nav']['nav-item-5'];
-navItems[5].textContent = siteContent['nav']['nav-item-6'];
+
+let navEle = document.querySelector('nav');
+let newFirstLink = document.createElement('a');
+let newLastLink = document.createElement('a');
+newFirstLink.textContent = 'New First Link';
+newLastLink.textContent = 'New Last Link';
+navEle.prepend(newFirstLink);
+navEle.append(newLastLink);
+
+let navItems = document.querySelectorAll('a');
+
+navItems.forEach(a => {
+  a.style.color = 'green';
+});
+
+navItems[1].textContent = siteContent['nav']['nav-item-1'];
+navItems[2].textContent = siteContent['nav']['nav-item-2'];
+navItems[3].textContent = siteContent['nav']['nav-item-3'];
+navItems[4].textContent = siteContent['nav']['nav-item-4'];
+navItems[5].textContent = siteContent['nav']['nav-item-5'];
+navItems[6].textContent = siteContent['nav']['nav-item-6'];
+
 
 // cta
 let ctaTxt = document.querySelector('.cta-text h1');
@@ -62,7 +77,33 @@ let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 // main-content
+let allH4 = document.getElementsByTagName('h4');
+let allP = document.getElementsByTagName('p');
+
+allH4[0].textContent = siteContent['main-content']['features-h4'];
+allP[0].textContent = siteContent['main-content']['features-content'];
+allH4[1].textContent = siteContent['main-content']['about-h4'];
+allP[1].textContent = siteContent['main-content']['about-content'];
+
+let featuresImg = document.getElementById('middle-img');
+featuresImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+allH4[2].textContent = siteContent['main-content']['services-h4'];
+allP[2].textContent = siteContent['main-content']['services-content'];
+allH4[3].textContent = siteContent['main-content']['product-h4'];
+allP[3].textContent = siteContent['main-content']['product-content'];
+allH4[4].textContent = siteContent['main-content']['vision-h4'];
+allP[4].textContent = siteContent['main-content']['vision-content'];
 
 // contact
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+allP[5].style.whiteSpace = 'pre';
+allP[5].textContent = '123 Way 456 Street\n Somewhere, USA';
+allP[6].textContent = siteContent['contact']['phone'];
+allP[7].textContent = siteContent['contact']['email'];
 
 // footer
+let footerP = document.querySelector('footer p');
+footerP.textContent = siteContent['footer']['copyright'];
