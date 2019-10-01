@@ -50,6 +50,8 @@ newFirstLink.textContent = 'New First Link';
 newLastLink.textContent = 'New Last Link';
 navEle.prepend(newFirstLink);
 navEle.append(newLastLink);
+newFirstLink.href = '#';
+newLastLink.href = '#';
 
 let navItems = document.querySelectorAll('a');
 
@@ -107,3 +109,43 @@ allP[7].textContent = siteContent['contact']['email'];
 // footer
 let footerP = document.querySelector('footer p');
 footerP.textContent = siteContent['footer']['copyright'];
+
+// stretch styling
+
+let footerEle = document.querySelector('footer');
+footerEle.style.backgroundColor = 'gray';
+footerEle.style.height = '10rem';
+footerEle.style.display = 'flex';
+footerEle.style.flexDirection = 'column';
+footerEle.style.justifyContent = 'space-evenly';
+footerEle.style.alignItems = 'center';
+
+// add button in footer along with event listeners
+const newBtn = document.createElement('button');
+newBtn.textContent = 'I\'m a new test button!';
+newBtn.style.height = '4rem';
+newBtn.style.width = '25rem';
+newBtn.style.fontSize = '2rem';
+newBtn.style.borderRadius = '1rem';
+newBtn.style.padding = '.5rem 2rem';
+newBtn.style.backgroundColor = 'white';
+newBtn.style.color = 'black';
+newBtn.style.outlineColor = 'gray';
+newBtn.addEventListener('mouseenter', (event) => {
+  newBtn.textContent = 'You arrived!';
+  newBtn.style.cursor = 'pointer';
+});
+newBtn.addEventListener('mouseout', (event) => {
+  newBtn.textContent = 'Nooo!  You left me!';
+});
+newBtn.addEventListener('mousedown', (event) => {
+  newBtn.textContent = 'You clicked!';
+  newBtn.style.backgroundColor = 'black';
+  newBtn.style.color = 'white';
+});
+newBtn.addEventListener('mouseup', (event) => {
+  newBtn.textContent = 'You let go!';
+  newBtn.style.backgroundColor = 'white';
+  newBtn.style.color = 'black';
+});
+footerEle.append(newBtn);
